@@ -35,7 +35,6 @@ const rooms = new Map<string, GameRoom>();
   cors: {
     origin: '*',
   },
-  transports: ['websocket'],
 })
 export class BingoGateway {
   @WebSocketServer()

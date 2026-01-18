@@ -12,7 +12,6 @@ import {
 @WebSocketGateway({
   namespace: '/system',
   cors: { origin: '*' },
-  transports: ['websocket'],
 })
 export class SocketGateway
   implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect

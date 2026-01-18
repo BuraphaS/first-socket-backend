@@ -13,7 +13,8 @@ import {
   cors: {
     origin: '*',
   },
-  transports: ['websocket'],
+  pingTimeout: 60000,
+  pingInterval: 25000,
 })
 export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
   @WebSocketServer()
