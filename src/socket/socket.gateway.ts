@@ -10,7 +10,6 @@ import {
 } from '@nestjs/websockets';
 
 @WebSocketGateway({
-  namespace: '/system',
   cors: { origin: '*' },
 })
 export class SocketGateway

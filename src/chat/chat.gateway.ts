@@ -9,12 +9,9 @@ import {
 } from '@nestjs/websockets';
 
 @WebSocketGateway({
-  namespace: '/chat',
   cors: {
     origin: '*',
   },
-  pingTimeout: 60000,
-  pingInterval: 25000,
 })
 export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
   @WebSocketServer()
