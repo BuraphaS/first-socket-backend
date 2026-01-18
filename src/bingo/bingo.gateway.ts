@@ -31,8 +31,10 @@ const WIN_COUNT = 5;
 const rooms = new Map<string, GameRoom>();
 
 @WebSocketGateway({
-  origin: '*',
-  methods: ['GET', 'POST'],
+  cors: {
+    origin: '*',
+  },
+  transports: ['websocket', 'polling'],
 })
 export class BingoGateway {
   @WebSocketServer()

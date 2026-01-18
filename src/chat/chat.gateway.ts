@@ -9,8 +9,10 @@ import {
 } from '@nestjs/websockets';
 
 @WebSocketGateway({
-  origin: '*',
-  methods: ['GET', 'POST'],
+  cors: {
+    origin: '*',
+  },
+  transports: ['websocket', 'polling'],
 })
 export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
   @WebSocketServer()
