@@ -9,7 +9,8 @@ import {
 } from '@nestjs/websockets';
 
 @WebSocketGateway({
-  cors: { origin: '*' },
+  origin: '*',
+  methods: ['GET', 'POST'],
 })
 export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
   @WebSocketServer()
