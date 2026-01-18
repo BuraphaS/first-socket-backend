@@ -31,6 +31,7 @@ const WIN_COUNT = 5;
 const rooms = new Map<string, GameRoom>();
 
 @WebSocketGateway({
+  namespace: '/bingo',
   cors: {
     origin: '*',
   },
