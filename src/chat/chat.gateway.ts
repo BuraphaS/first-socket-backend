@@ -13,7 +13,7 @@ import {
   cors: {
     origin: '*',
   },
-  transports: ['websocket', 'polling'],
+  transports: ['websocket'],
 })
 export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
   @WebSocketServer()
