@@ -1,17 +1,18 @@
-import {
-  WebSocketGateway,
-  WebSocketServer,
-  SubscribeMessage,
-  OnGatewayInit,
-  OnGatewayConnection,
-  OnGatewayDisconnect,
-} from '@nestjs/websockets';
 import { Server, Socket } from 'socket.io';
 
+import {
+  OnGatewayConnection,
+  OnGatewayDisconnect,
+  OnGatewayInit,
+  SubscribeMessage,
+  WebSocketGateway,
+  WebSocketServer,
+} from '@nestjs/websockets';
+
 @WebSocketGateway({
-  cors: {
-    origin: '*', // production ควร fix domain
-  },
+  namespace: '/system',
+  cors: { origin: '*' },
+  transports: ['websocket'],
 })
 export class SocketGateway
   implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect
